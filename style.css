@@ -88,9 +88,20 @@ a:hover, a:active {
 	margin-right: 2px;
 }
 
+.register {
+	background-color: #F5F5F5;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 3% 5%;
+	margin-top: 4px;
+	margin-right: 2px;
+	float:left;
+}
+
 .member-details {
 	width: 20%;
-	float: left;
+	float:left;
 	background-color: #F5F5F5;
 	border-radius:5px;
 	-moz-border-radius: 5px;
@@ -101,6 +112,18 @@ a:hover, a:active {
 }
 
 .loginform  ul {
+	list-style: none;
+	margin: 0 auto;
+	padding-right: 30px;
+}
+
+.register ul {
+	list-style: none;
+	margin: 0 auto;
+	padding-right: 30px;
+}
+
+.cipher-tool ul {
 	list-style: none;
 	margin: 0 auto;
 	padding-right: 30px;
@@ -126,5 +149,16 @@ a:hover, a:active {
 	width: 92%;
 	margin: 2% auto;
 	color: #606060
+}
+
+.cipher-info {
+	background-color: #F5F5F5;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 3% 5%;
+	margin-top: 4px;
+	margin-right: 2px;
+	margin-bottom: 4px;
 }
 

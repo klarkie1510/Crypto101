@@ -11,8 +11,6 @@ include 'includes/siteheader.php';
 ?>
 		<!--HEADER-->
 		
-		<div class = "main">
-			<div class = "content">
 				<article class = "article1">
 					<header>
 						<h2>Learn about cryptography easily</h2>
@@ -34,11 +32,5 @@ include 'includes/siteheader.php';
 						Mauris consequat feugiat tortor, vel lobortis ligula cursus id.</p>
 					</content>
 				</article>
-			
-			</div>
-		</div>
-		
-		<?php include 'includes/aside.php' ?>
-		
-		<!--FOOTER-->
+
 		<?php include 'includes/sitefooter.php' ?>

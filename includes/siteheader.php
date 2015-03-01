@@ -14,9 +14,11 @@
 			<img src = "images/title.png">
 			
 			<nav><ul>
-				<li class = "active"><a class = "active" href="#">Home</a></li>
-				<li><a href="#">Ciphers</a></li>
+				<li class = "active"><a class = "active" href="index.php">Home</a></li>
+				<li><a href="ciphers_select.php">Ciphers</a></li>
 				<li><a href="#">Tests</a></li>
 				<li><a href="#">About</a></li>
 			</ul></nav>
 		</header>
+			<div class = "main">
+				<div class = "content">
