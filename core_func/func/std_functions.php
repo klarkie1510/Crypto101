@@ -8,6 +8,7 @@
 		return mysql_real_escape_string($data);
 	}
 	
+	//make the errors look nice. 
 	function display_errors($errors) {
 		$output = array();
 		foreach($errors as $error) {

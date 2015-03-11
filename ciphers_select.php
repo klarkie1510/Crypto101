@@ -15,7 +15,7 @@ include 'includes/siteheader.php';
 				<a href="rsa.php">RSA Algorithm</a>
 			</li>
 			<li>
-			    <a href="affine.php">Affine Cipher</a>
+			    <a href="playfair.php">Playfair Cipher</a>
 			</li>
 		</ul>
 	</article>

@@ -161,4 +161,79 @@ a:hover, a:active {
 	margin-right: 2px;
 	margin-bottom: 4px;
 }
+.cipher-tool {
+	background-color: #F5F5F5;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 3% 5%;
+	margin-top: 4px;
+	margin-right: 2px;
+	margin-bottom: 4px;
+	vertical-align: top;
+}
 
+.cipher-tool textarea {
+	margin-top: 4px;
+	margin-left: 4px;
+}
+
+#caesar-table{
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	margin-right:4px;
+}
+
+ #vigenere-grid  {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	margin-right:4px;
+ }
+ 
+ #head td {
+ 	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+ }
+ 
+ .body td {
+	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+#caesar-table thead td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+
+
+#caesar-table td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+ .caesar-app {
+	display: inline-block;
+	vertical-align: middle;
+ }

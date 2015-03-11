@@ -4,7 +4,7 @@ include 'includes/siteheader.php';
 
 if(empty($_POST) === false) {
 	//the name of the required fields.
-	$mandatory_fields = array('username', 'password', 'repeat_password', 'first_name', 'last_name', 'email');
+	$mandatory_fields = array('username', 'password', 'repeat_password', 'first_name', 'last_name');
 	
 	//if the required fields are empty, error.
 	foreach($_POST as $key=>$value) {
@@ -14,6 +14,7 @@ if(empty($_POST) === false) {
 		}			
 	}
 	
+	//if there are no errors, check validating of fields. 
 	if(empty($errors) === true) {
 		if(existing_user($_POST['username']) === true) {
 			$errors[] = "Username already exists.";
@@ -35,9 +36,6 @@ if(empty($_POST) === false) {
 		}
 		if(!preg_match('/^[A-z]+$/', $_POST['last_name'])) {
 			$errors[] = "Last name can only contain letters";
-		}
-		if(existing_email($_POST['email']) === true) {
-			$errors[] = "Email already in use.";
 		}
 	}
 }
@@ -70,10 +68,6 @@ if(empty($_POST) === false) {
 							<input type="text" name="last_name">
 						</li>
 						<li>
-							*Email:<br>
-							<input type="text" name="email">
-						</li>
-						<li>
 							<input type="submit" name="Submit">
 						</li>
 					</ul>
@@ -82,13 +76,13 @@ if(empty($_POST) === false) {
 					<p> * indicates required fields </p>
 					
 					<?php if(empty($_POST) === false && empty($errors) === true) {
+						//create an associative array, filled with user info.
 						$register_data = array (
 						'username' => $_POST['username'],
 						'password' => $_POST['password'],
 						'salt' => 'abcdefghijklmnopqrstuvwxyz',
 						'first_name' => $_POST['first_name'],
 						'last_name' => $_POST['last_name'],
-						'email' => $_POST['email'],
 						'points' => 0,
 						'level_id' => 1);
 						

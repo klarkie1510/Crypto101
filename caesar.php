@@ -1,67 +1,49 @@
 <?php
 include 'core_func/init.php';
 include 'includes/siteheader.php';
-$output = "Output text";
-if(isset($_POST) && empty($_POST) === false) {
-	$plaintext = $_POST['plaintext'];
-	$shift_value = $_POST['shift_value'];
-	$ciphertext = $plaintext;
-	
-	for($i = 0; $i<strlen($plaintext); $i++) {
-		if(!preg_match('/^[A-z]+$/', $plaintext[$i])) {
-			$ciphertext[$i] = $plaintext[$i];
-		} else {
-			$ascii_value = ord($plaintext[$i]);
-			for($j = 0; $j < $shift_value; $j++) {
-				if($ascii_value == 90) { 
-					$ascii_value = 65;
-				} else if($ascii_value == 122) {
-					$ascii_value = 97;
-				} else {
-					$ascii_value++;
-				}
-			}
-			$ciphertext[$i] = chr($ascii_value);
-		}
-		$output = $ciphertext;
-	}
-}
 ?>
 	<div class = "cipher-info">
 		<header>
-			<h2>Caesar cipher</h2>
+			<h2>Caesar cipher: introduction</h2>
+			<hr>
 		</header>
 			<content>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Aenean eget ante quis tortor cursus tincidunt.
-				Curabitur eget tortor vitae ligula commodo tempor et in tortor.
-				Pellentesque luctus et dolor a fermentum.
-				Maecenas id magna elementum, ultricies tortor eget, dapibus nunc.
-				Mauris nulla erat, lobortis sedmaximus id, interdum quis lacus. 
-				Nunc aliquam congue lorem id ultricies. 
-				Fusce tempor finibus ante, eget dictum lacus tempus id.
-				Suspendisse mollis nulla sit amet ipsum fringilla, at iaculis massa varius. 
-				Etiam sollicitudin enim quis convallis lobortis.</p>
+				<p>The Caesar cipher (also known as the 'shift cipher') is one of the simplest and widely known
+				cryptographic encryption techniques. The method is named after Julius Caesar, who used it to protect
+				messages during wars.</p>
+				
+				<p>Caesar cipher is an example of a substitution cipher - units of plaintext are replaced with units of ciphertext,
+				which are a fixed position down the alphabet. The cipher requires a shift value (key), which is the number of positions down
+				the alphabet which the units are replaced. For example, a left shift of 5 would mean that 'D' is replaced by 'G', 'E' is 
+				replaced by 'H' etc.</p>
 			</content>
 		
 	</div>
 	<div class = "cipher-tool">
-		Plaintext:<br>
-		<textarea rows = "12" cols="40" name="plaintext" form="caesar">Enter your plaintext here.. </textarea>
-		<form action = "caesar.php" method = "post" id = "caesar">
+		<header>
+			<h2>Caesar cipher tool</h2>
+			<p><strong>Step 1: </strong>Use the 'Left Shift' and 'Right Shift' keys to select a key (shown in the 'shift value' box).</p>
+			<p><strong>Step 2: </strong>Type some text into the 'Plaintext' text area, and press the 'Encode' button to start encoding! </p>
+			<p><strong>Step 3: </strong>Use the 'Decode' button to decode any text in the 'Ciphertext' text area.</p>
+			<hr>
+		</header>
+		<?php include 'includes/caesar-table.php' ?>
+		<textarea rows = "12" cols="40" id = "plaintext" name="plaintext" form="caesar">Plaintext: Please enter some text</textarea>
+		<textarea rows = "12" cols="40" id = "ciphertext" name="ciphertext" form = "caesar">Ciphertext: output </textarea>
+		<form action = "caesar.php" id = "caesar">
 			<ul>
 				<li>
-					Shift value (right shift):<br>
-					<input type = "text", name = "shift_value">
+					Shift value (left shift, if encoding):<br>
+					<input type = "text" id = "shift_value" value = 0 name = "shift_value" readonly>
 				</li>
 				<li>
-					<input type = "submit", value = "Encode">
+					<input type = "button", id = "Encode", name = "Encode", value = "Encode" class = "caesar-app">
+					<input type = "button", id = "Decode", name = "Decode", value = "Decode" class = "caesar-app">
 				</li>
 			</ul>
 		</form>
-		Ciphertext:<br>
-		<textarea rows = "12" cols="40" name="ciphertext"><?php echo htmlspecialchars($output);?> </textarea>
 	</div>
+	<script type = 'text/javascript' src='js/caesar.js'></script>
 <?php
 include 'includes/sitefooter.php';
 ?>
